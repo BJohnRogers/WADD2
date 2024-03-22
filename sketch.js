@@ -1,6 +1,6 @@
 let posX = 250;
 let posY = 250;
-let jumpHeight = -10;
+let jumpHeight = -200;
 let groundY = 400;
 let gravity = 0.3;
 let grounded = true;
@@ -23,7 +23,7 @@ function draw(){
 }
 
 function jump(){
-   posY -= 100;
+   posY += jumpHeight;
 }
 
 function move(){

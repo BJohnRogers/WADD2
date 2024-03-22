@@ -1,0 +1,47 @@
+* {
+    padding:0;
+    margin:0;
+}
+
+.banner{
+    background-color: rgb(41, 41, 41);
+    position:sticky;
+    height:10%;
+    color:white;
+}
+
+.banner h1{
+    font-family:Bubblegum, sans-serif;
+    text-align:center;
+    padding:2%;
+}
+
+.banner ul li{
+    text-align: center;;
+    display:inline-block;
+    width:32.5%;
+}
+
+.banner ul li a {
+    display:block;
+    padding:20px;
+}
+
+#homeButton{
+    border-bottom: 2px solid rgb(255, 0, 0)
+}
+
+#gamesButton{
+    border-bottom: 2px solid rgb(255, 0, 242)
+}
+
+#fyButton{
+    border-bottom: 2px solid rgb(0, 255, 34)
+}
+
+/*Fonts*/
+
+@font-face{
+    font-family:Bubblegum;
+    src:url(Fonts/Bubblegum_Sans/BubblegumSans-Regular.ttf)
+}
