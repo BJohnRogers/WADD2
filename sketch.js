@@ -1,8 +1,8 @@
 let posX = 250;
 let posY = 250;
+let jumpHeight = -10;
 let groundY = 400;
-let tempPosY;
-let gravity = 1;
+let gravity = 0.3;
 let grounded = true;
 
 function setup(){
@@ -19,15 +19,11 @@ function draw(){
     doGravity();
     checkGround();
     move();
-    console.log("no");
 
 }
 
 function jump(){
-
-    if(grounded) if(keyIsDown(32)) posY -= 50;
-    
-
+   posY -= 100;
 }
 
 function move(){
@@ -42,7 +38,7 @@ function drawGround(){
 } 
 
 function checkGround(){
-    if((posY) = groundY) grounded = true;
+    if((posY) > groundY) grounded = true;
     else grounded = false;
 }
 
@@ -52,4 +48,8 @@ function doGravity(){
         posY += gravity * deltaTime; 
     }
 
+}
+
+function keyPressed(){
+    if(keyCode == 32 && grounded) jump();
 }
