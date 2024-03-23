@@ -40,11 +40,7 @@ body {
     z-index:10;
 }
 
-.popUp .menu {
-
-}
-
-.popUp .logInMenu {
+.popUp .popUpMenu {
     color:black;
     background-color: white;
     height:28vh;
@@ -52,34 +48,48 @@ body {
     position:absolute;
     border: 1px solid black;
     display:grid;
-    grid-template-rows: 30% 30% 30%;
+    grid-template-rows: 25% 25% 30% 20%;
     white-space: nowrap;
-    
     
 }
 
-.logInMenu button {
+#login{
+    visibility: hidden;
+}
+
+.popUpMenu button {
     margin-left:auto;
     margin-right:auto;
     display:block;
     height:2em;
     margin-top:2em;
+    width:10em;
 }
 
-#signUpButton {
-   
+#signUp {
+    display:inline-flex;
+    border:none;
+    background-color: inherit;
+    cursor:pointer;
+    visibility: hidden;
 }
 
-.logInMenu label{
+.popUpMenu label{
     padding:20px;
     margin:20px;
 }
 
-.logInMenu .inputBox {
+.popUpMenu .inputBox {
     padding:5px;
 }
 
-.popUp .show {
+#login .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
+#signUp .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
