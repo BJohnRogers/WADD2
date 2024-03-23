@@ -1,13 +1,30 @@
 * {
     padding:0;
     margin:0;
+    text-decoration: none;
+}
+
+body {
+    background-color: rgba(199, 222, 241, 0.668);
+}
+
+.userProfile {
+    background-color: rgba(168, 197, 221, 0.668);
+    display:flexbox;
+    text-align:justify;
+}
+
+.userProfile h2 {
+    font-size: 20px;
+    background-color: inherit;
 }
 
 .banner{
     background-color: rgb(41, 41, 41);
+    font-family: Roboto, sans-serif;
+    color:white;
     position:sticky;
     height:10%;
-    color:white;
 }
 
 .banner h1{
@@ -19,11 +36,12 @@
 .banner ul li{
     text-align: center;;
     display:inline-block;
-    width:32.5%;
+    width:33%;
 }
 
 .banner ul li a {
-    display:block;
+    color: inherit;
+    display: block;
     padding:20px;
 }
 
@@ -44,4 +62,9 @@
 @font-face{
     font-family:Bubblegum;
     src:url(Fonts/Bubblegum_Sans/BubblegumSans-Regular.ttf)
+}
+
+@font-face{
+    font-family: Roboto;
+    src:url(Fonts/Roboto/Roboto-Regular.ttf)
 }
