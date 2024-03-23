@@ -6,6 +6,7 @@
     <title>LargeBuckle</title>
     <link rel="stylesheet" href="style.css">
     <script src="Libraries/p5.js"></script>
+    <script src="script.js"></script>
   </head>
 
   <header>
@@ -29,9 +30,33 @@
   <body>
 
     <span class="userProfile">
-      <h2>Sign Up!</h2>
+      <div class="profileBox">
+        <img src="">
+        <button onclick="login()" class="menuButton" id="loginButton">Sign Up!</button>
+      </div>
+      <span class="popUp">
+
+        <span class = "logInMenu" id="login">
+      
+          <label>Username: <input class="inputBox" id="userN" required></label>
+      
+          <label>Password: <input class="inputBox" type="password" id="passW" required></label>
+      
+          <button onclick="loginEnter()" id="login">Login</button>
+
+          <span>Not a member? <a onclick="signUp()">Sign in</a></span>
+
+          <button onclick="signUpEnter()" id="signUpButton">Sign Up</button>
+
+        </span>
+       
+      </span>
     </span>
+
+      
+   
 
   </body>
 
 </html>
+
