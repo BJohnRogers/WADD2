@@ -50,10 +50,13 @@ body {
     display:grid;
     grid-template-rows: 25% 25% 30% 20%;
     white-space: nowrap;
-    
 }
 
 #login{
+    visibility: hidden;
+}
+
+#signUp {
     visibility: hidden;
 }
 
@@ -66,12 +69,11 @@ body {
     width:10em;
 }
 
-#signUp {
+#signUpButton {
     display:inline-flex;
     border:none;
     background-color: inherit;
     cursor:pointer;
-    visibility: hidden;
 }
 
 .popUpMenu label{
@@ -83,13 +85,7 @@ body {
     padding:5px;
 }
 
-#login .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
-
-#signUp .show {
+.popUp #signUp .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
