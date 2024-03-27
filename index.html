@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>LargeBuckle</title>
     <link rel="stylesheet" href="style.css">
     <script src="Libraries/p5.js"></script>
@@ -31,34 +30,39 @@
 
     <span class="userProfile">
       <div class="profileBox">
-        <img src="">
-        <button onclick="loginMenu()" class="menuButton">Sign Up!</button>
+        <button onclick="loginMenu()" class="menuButton">Log In</button>
       </div>
 
-      <span class="popUp" id="login">
+      <span class="popUp">
+        <div id="login">
         <span class = "popUpMenu">
       
-          <label>Username: <input class="inputBox" id="userN" required></label>
+          <label>Username: <input class="inputBox" id="loginUserN" required></label>
       
-          <label>Password: <input class="inputBox" type="password" id="passW" required></label>
+          <label>Password: <input class="inputBox" type="password" id="loginPassW" required></label>
       
           <button onclick="loginEnter()" id="loginEnter">Login</button>
 
           <span>Not a member? <button onclick="signUpMenu()" id="signUpButton">Sign up</button></span>
 
         </span>
+        </div>
       </span>
 
-        <span class="popUp" id="signUp">
+        <span class="popUp">
+          <div id="signUp">
           <span class = "popUpMenu">
 
             <label>Username: <input class="inputBox" id="userN" required></label>
         
             <label>Password: <input class="inputBox" type="password" id="passW" required></label>
         
-            <button onclick="signUpEnter()" id="signUpButton">Sign Up</button>
+            <button onclick="signUpEnter()">Sign Up</button>
+
+            <span>Already a member? <button onclick="loginMenuTwo()" id="loginButton">Login</button></span>
           
         </span>
+      </div>
       </span>
 
     </span>
