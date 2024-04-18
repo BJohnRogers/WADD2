@@ -1,6 +1,7 @@
 let posX = 250;
 let posY = 250;
 let jumpHeight = -200;
+let ease = 0.1;
 let groundY = 400;
 let gravity = 0.3;
 let grounded = true;
@@ -52,4 +53,8 @@ function doGravity(){
 
 function keyPressed(){
     if(keyCode == 32 && grounded) jump();
+}
+
+function collision(rect1, rect2){
+   
 }
