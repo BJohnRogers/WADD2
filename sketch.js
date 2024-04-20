@@ -5,16 +5,18 @@ let ease = 0.1;
 let groundY = 400;
 let gravity = 0.3;
 let grounded = true;
+let player;
 
 function setup(){
-createCanvas(500, 500)
+    createCanvas(500, 500)
+    player = new Player(200, 200, 100);
 }
 
 function draw(){
 
     background(100);
     fill(130, 130, 130);
-    circle(posX, posY, 100);
+    player.draw();
     
     drawGround();
     doGravity();
@@ -55,6 +57,6 @@ function keyPressed(){
     if(keyCode == 32 && grounded) jump();
 }
 
-function collision(rect1, rect2){
-   
-}
+
+
+
