@@ -9,18 +9,18 @@ let player;
 
 function setup(){
     createCanvas(500, 500)
-    player = new Player(200, 200, 100);
+    player = new Player(posX, posY, 100);
 }
 
 function draw(){
 
     background(100);
     fill(130, 130, 130);
-    player.draw();
     
-    drawGround();
+    
+    handleGround();
+    player.draw();
     doGravity();
-    checkGround();
     move();
 
 }
@@ -36,14 +36,11 @@ function move(){
 
 }
 
-function drawGround(){ 
+function handleGround(){ 
     rect(0, groundY, 500, 100);
-} 
-
-function checkGround(){
     if((posY) > groundY) grounded = true;
     else grounded = false;
-}
+} 
 
 function doGravity(){
       

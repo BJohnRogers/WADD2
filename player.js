@@ -4,7 +4,6 @@ class Player extends HitBox{
         super(x, y, size);
     }
 
-
     draw(){
         circle(x, y, size);
     }
