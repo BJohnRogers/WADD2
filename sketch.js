@@ -1,6 +1,6 @@
 let posX = 250;
 let posY = 250;
-let jumpHeight = -200;
+let jumpHeight = -100;
 let ease = 0.1;
 let groundY = 400;
 let gravity = 0.3;
@@ -9,7 +9,7 @@ let player;
 
 function setup(){
     createCanvas(500, 500)
-    player = new Player(posX, posY, 100);
+    player = new Player();
 }
 
 function draw(){
@@ -17,9 +17,9 @@ function draw(){
     background(100);
     fill(130, 130, 130);
     
-    
+    player.draw(posX, posY, 20);
     handleGround();
-    player.draw();
+    
     doGravity();
     move();
 
@@ -38,8 +38,12 @@ function move(){
 
 function handleGround(){ 
     rect(0, groundY, 500, 100);
-    if((posY) > groundY) grounded = true;
-    else grounded = false;
+    if((posY) > groundY){
+        grounded = true;
+    } else {
+        grounded = false;
+    }
+    
 } 
 
 function doGravity(){
