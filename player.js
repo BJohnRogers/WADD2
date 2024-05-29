@@ -1,4 +1,4 @@
-class Player extends HitBox{
+class Player extends HitBox {
 
     constructor(x, y, size){
         super(x, y, size);

@@ -1,4 +1,4 @@
-class HitBox{
+class HitBox {
     constructor(x, y, size){
         this.x = x;
         this.y = y;

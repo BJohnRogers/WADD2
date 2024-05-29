@@ -1,34 +1,35 @@
 var loggedIn;
 var passW;
 var userN;
+var getUserN;
+var getPassW;
+var login;
+var signUp;
 
 function loginMenu() {
-    var loginMenu = document.getElementById("login");
-    loginMenu.classList.toggle("show");
+    menus();
+    login.classList.toggle("show");
 }
 
 function loginMenuTwo() {
-    var loginMenu = document.getElementById("login");
-    var signUpMenu = document.getElementById("signUp");
-    loginMenu.classList.toggle("show");
-    signUpMenu.classList.toggle("show");
+    menus();
+    login.classList.toggle("show");
+    signUp.classList.toggle("show");
 }
 
 function signUpMenu() {
-    var signUpMenu = document.getElementById("signUp");
-    var loginMenu = document.getElementById("login");
-    signUpMenu.classList.toggle("show");
-    loginMenu.classList.toggle("show");
+    menus();
+    signUp.classList.toggle("show");
+    login.classList.toggle("show");
 }
 
 function signUpEnter(){
 
-    var getPassW = document.getElementById("passW");
-    var getUserN = document.getElementById("userN");
-    var signUpMenu = document.getElementById("signUp");
-    var loginMenu = document.getElementById("login");
-    loginMenu.classList.toggle("show");
-    signUpMenu.classList.toggle("show");
+    getInputs();
+    menus();
+
+    login.classList.toggle("show");
+    signUp.classList.toggle("show");
     
    
     passW = getPassW.value;
@@ -40,16 +41,20 @@ function signUpEnter(){
 
 function loginEnter() {
 
-    userN = getUserN.value;
-    passW = getPassW.value;
+    getInputs();
+    menus();
+
+    let thisUserN = getUserN.value;
+    let thisPassW = getPassW.value;
 
     for(let i = 0; i < localStorage.length; i++){
         let currentKey = localStorage.key(i)
-        if(currentKey = userN){
-            if(localStorage.getItem(currentKey) == passW){
+        if(currentKey == thisUserN){
+            if(localStorage.getItem(currentKey) == thisPassW){
                 loggedIn = true;
                 if(loggedIn){
-                    console.log("yep!" + userN + passW);
+                    console.log("yep!" + thisUserN + thisPassW);
+                    login.classList.toggle("show");
                 }
             } else {
                 console.log("wrong passw sorry buddy");
@@ -57,10 +62,16 @@ function loginEnter() {
         }
     }
     
-    var loginMenu = document.getElementById("login");
-    loginMenu.classList.toggle("show");
-
 }
 
+function getInputs(){
+    getPassW = document.getElementById("passW");
+    getUserN = document.getElementById("userN");
+}
+
+function menus(){
+    login = document.getElementById("login");
+    signUp = document.getElementById("signUp");
+}
 
 
