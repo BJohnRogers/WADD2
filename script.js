@@ -1,4 +1,6 @@
 var loggedIn;
+var passW;
+var userN;
 
 function loginMenu() {
     var loginMenu = document.getElementById("login");
@@ -27,27 +29,34 @@ function signUpEnter(){
     var loginMenu = document.getElementById("login");
     loginMenu.classList.toggle("show");
     signUpMenu.classList.toggle("show");
-    var passW;
-    var userN;
+    
    
     passW = getPassW.value;
     userN = getUserN.value;
 
-    let userDetails = {
-        userN,
-        passW
-    }
-
-
+    localStorage.setItem(userN, passW);
 
 }
 
 function loginEnter() {
 
-    if(userN, passW = userDetails){
-        loggedIn = true;
-    }
+    userN = getUserN.value;
+    passW = getPassW.value;
 
+    for(let i = 0; i < localStorage.length; i++){
+        let currentKey = localStorage.key(i)
+        if(currentKey = userN){
+            if(localStorage.getItem(currentKey) == passW){
+                loggedIn = true;
+                if(loggedIn){
+                    console.log("yep!" + userN + passW);
+                }
+            } else {
+                console.log("wrong passw sorry buddy");
+            }
+        }
+    }
+    
     var loginMenu = document.getElementById("login");
     loginMenu.classList.toggle("show");
 
