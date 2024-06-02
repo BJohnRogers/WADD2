@@ -89,6 +89,20 @@ body {
     animation: fadeIn 1s;
 }
 
+#profilePic{
+    float: right;
+}
+
+#imageUpload{
+    visibility: visible;
+}
+
+#imageUpload .show{
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+}
+
 .banner{
     background-color: rgb(41, 41, 41);
     font-family: Roboto, sans-serif;

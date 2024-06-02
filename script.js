@@ -6,6 +6,12 @@ var getPassW;
 var login;
 var signUp;
 
+function displayWelcome(){
+    document.getElementById("welcome").innerHTML = "Welcome " + userN + "!"; 
+}
+
+
+
 function loginMenu() {
     menus();
     login.classList.toggle("show");
@@ -54,6 +60,7 @@ function loginEnter() {
                 loggedIn = true;
                 if(loggedIn){
                     console.log("yep!" + thisUserN + thisPassW);
+                    displayWelcome();
                     login.classList.toggle("show");
                 }
             } else {
