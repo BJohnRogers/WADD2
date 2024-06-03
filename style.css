@@ -89,18 +89,36 @@ body {
     animation: fadeIn 1s;
 }
 
+
+#welcome{
+    visibility:hidden;
+}
 #profilePic{
     float: right;
 }
 
-#imageUpload{
-    visibility: visible;
+#game{
+    text-align:center;
 }
 
 #imageUpload .show{
     visibility: visible;
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
+}
+
+#news{
+    text-align: center;
+    font-family:Roboto;
+    color:rgb(93, 74, 102);
+}
+
+#largeBuckle{
+    position:absolute;
+    width:40%;
+    display:block;
+    margin-top:10%;
+    margin-left:5%;
 }
 
 .banner{
@@ -128,6 +146,14 @@ body {
     color: inherit;
     display: block;
     padding:20px;
+}
+
+#newsTable{
+    text-align:left;
+}
+
+.tableImage{
+    width: 40%;
 }
 
 #homeButton{
@@ -164,7 +190,7 @@ body {
     to {opacity:1 ;}
   }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 600px){
     .userProfile .profileBox {
         visibility:hidden;
     }

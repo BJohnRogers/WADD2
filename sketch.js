@@ -8,7 +8,8 @@ let grounded = true;
 let player;
 
 function setup(){
-    createCanvas(500, 500)
+    var theCanvas = createCanvas(500, 500);
+    theCanvas.parent('#game');
     player = new Player();
 }
 
@@ -16,27 +17,37 @@ function draw(){
 
     background(100);
     fill(130, 130, 130);
-    
+
+    score();
     player.draw(posX, posY, 20);
     handleGround();
     
     doGravity();
     move();
+    
 
 }
 
 function jump(){
-   posY += jumpHeight;
+    // Jump function
+    posY += jumpHeight;
 }
 
 function move(){
 
-    if(keyIsDown(68)) posX+=10;
+    // Attempt to check if the player is out of the bounds, then moves based on keyinput
+    if(keyIsDown(68)) if(!posX <= 10 || !posX >= 499) posX+=10;
     if(keyIsDown(65)) posX-=10;
 
 }
 
+function score(){
+    text("Score = " + (nf(millis()/1000, 1,2 )), 10, 10);
+}
+
 function handleGround(){ 
+
+    // Creates the ground and checks if player is on ground
     rect(0, groundY, 500, 100);
     if((posY) > groundY){
         grounded = true;
@@ -48,6 +59,7 @@ function handleGround(){
 
 function doGravity(){
       
+    // Does the gravity if player is off ground
     if(!grounded){
         posY += gravity * deltaTime; 
     }
@@ -55,6 +67,7 @@ function doGravity(){
 }
 
 function keyPressed(){
+    // Checks if space is pressed and if the player is on ground
     if(keyCode == 32 && grounded) jump();
 }
 

@@ -4,11 +4,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>LargeBuckle</title>
     <link rel="stylesheet" href="style.css">
-    <script src="Libraries/p5.js"></script>
     <script src="script.js"></script>
-    <script src="hitbox.js"></script>
-    <script src="player.js"></script>
-    <script src="enemy.js"></script>
   </head>
 
   <header>
@@ -19,9 +15,9 @@
 
       <nav>
         <ul>
-          <li><a href="#navHome" id="homeButton">Home</a></li>
-          <li><a href="#navGames" id="gamesButton">Games</a></li>
-          <li><a href="#navFY" id="fyButton">For You</a></li>
+          <li><a href="index.html" id="homeButton">Home</a></li>
+          <li><a href="games.html" id="gamesButton">Games</a></li>
+          <li><a href="forYou.html" id="fyButton">For You</a></li>
         </ul>
       </nav>
 
@@ -34,18 +30,20 @@
     <span class="userProfile">
       <div class="profileBox">
         <button onclick="loginMenu()" class="menuButton">Log In</button>
+        <div id = "error"></div>
         <span id="welcome">
-          <span id="imageUpload">
-            <form action="/action_page.php">
+          <span>
+            <form action="profilePic.jpg">
               <label for="img">Upload profile image</label>
-              <input type="file" id="img" name="img" accept="image/*">
-              <input type="submit">
+              <input type="file" id="img" name="profPicture.jpg" accept="image/*">
+              <button type="submit" id="submitButton" formaction = "" onclick="imageSubmit()">Upload</button>
             </form>
           </span>
+          <span id="profilePic">
+            <img src="profilePic.jpg" alt="Profile Picture">
+          </span>
         </span>
-        <span id="profilePic">
-          <img src="profilePic.jpg">
-        </span>
+        
       </div>
 
       <span class="popUp">
@@ -80,8 +78,15 @@
       </div>
       </span>
 
+    </span>
 
-     
+    <span id="largeBuckle">
+      
+      <h2>Welcome to Large Buckle!</h2>
+      <p>We're so glad to have you! We hope you can enjoy our (not currently) wide array of 
+        games and entertainment, and hope to see you often. Make sure to keep up with our news tab for information on new
+        games and experiences!
+      </p>
 
     </span>
 

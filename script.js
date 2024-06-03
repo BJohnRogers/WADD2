@@ -5,11 +5,7 @@ var getUserN;
 var getPassW;
 var login;
 var signUp;
-
-function displayWelcome(){
-    document.getElementById("welcome").innerHTML = "Welcome " + userN + "!"; 
-}
-
+var file;
 
 
 function loginMenu() {
@@ -17,10 +13,16 @@ function loginMenu() {
     login.classList.toggle("show");
 }
 
+function imageSubmit(){
+    document.getElementById("profilePic").src = img.src.replace();
+}
+
 function loginMenuTwo() {
     menus();
     login.classList.toggle("show");
     signUp.classList.toggle("show");
+    welcome.classList.togggle("show");
+    document.getElementById("welcome").innerHTML = "Welcome " + userN + "!"; 
 }
 
 function signUpMenu() {
@@ -59,16 +61,18 @@ function loginEnter() {
             if(localStorage.getItem(currentKey) == thisPassW){
                 loggedIn = true;
                 if(loggedIn){
-                    console.log("yep!" + thisUserN + thisPassW);
-                    displayWelcome();
                     login.classList.toggle("show");
                 }
             } else {
-                console.log("wrong passw sorry buddy");
+                displayError();
             }
         }
     }
     
+}
+
+function displayError(){
+    document.getElementById("error").innerHTML = "Incorrect username or password";
 }
 
 function getInputs(){
@@ -79,6 +83,7 @@ function getInputs(){
 function menus(){
     login = document.getElementById("login");
     signUp = document.getElementById("signUp");
+    welcome = document.getElementById("welcome");
 }
 
 
