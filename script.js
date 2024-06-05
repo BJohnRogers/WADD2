@@ -7,14 +7,16 @@ var login;
 var signUp;
 var file;
 
+let profilePic = document.getElementById("profilePic");
+let uploadImage = document.getElementById("uploadImage");
+
+uploadImage.onchange = function(){
+    profilePic.src = URL.createObjectURL(uploadImage.files[0]);
+}
 
 function loginMenu() {
     menus();
     login.classList.toggle("show");
-}
-
-function imageSubmit(){
-    document.getElementById("profilePic").src = img.src.replace();
 }
 
 function loginMenuTwo() {

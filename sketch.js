@@ -6,11 +6,14 @@ let groundY = 400;
 let gravity = 0.3;
 let grounded = true;
 let player;
+let platformOne;
+let moveSpeed;
 
 function setup(){
     var theCanvas = createCanvas(500, 500);
     theCanvas.parent('#game');
     player = new Player();
+    platformOne = new Platform(250, 300, 10, 10);
 }
 
 function draw(){
@@ -20,6 +23,7 @@ function draw(){
 
     score();
     player.draw(posX, posY, 20);
+    platformOne.draw();
     handleGround();
     
     doGravity();
@@ -35,10 +39,17 @@ function jump(){
 
 function move(){
 
-    // Attempt to check if the player is out of the bounds, then moves based on keyinput
-    if(keyIsDown(68)) if(!posX <= 10 || !posX >= 499) posX+=10;
-    if(keyIsDown(65)) posX-=10;
+    checkBounds();
 
+    // Attempt to check if the player is out of the bounds, then moves based on keyinput
+    if(keyIsDown(68)) posX += moveSpeed;
+    if(keyIsDown(65)) posX -= moveSpeed;
+
+}
+
+function checkBounds(){
+    moveSpeed = (posX <= 10 || posX >= 490 ? 0 : 10);
+    posX = (posX <= 10 ? 11 : posX >= 490 ? 489 : posX);
 }
 
 function score(){
@@ -49,7 +60,7 @@ function handleGround(){
 
     // Creates the ground and checks if player is on ground
     rect(0, groundY, 500, 100);
-    if((posY) > groundY){
+    if((posY + 15) > groundY){
         grounded = true;
     } else {
         grounded = false;

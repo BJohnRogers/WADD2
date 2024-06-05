@@ -89,12 +89,25 @@ body {
     animation: fadeIn 1s;
 }
 
-
 #welcome{
+    visibility:visible;
+}
+
+#uploadImage{
     visibility:hidden;
 }
+
+#imageLabel{
+    display:block;
+    width:fit-content;
+    background-color: rgba(0, 0, 0, 0.185);
+    padding:10px;
+    cursor:pointer;
+}
+
 #profilePic{
     float: right;
+    width:20%
 }
 
 #game{
