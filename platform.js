@@ -7,7 +7,7 @@ class Platform{
     }
 
     draw(){
-        rect(x, y, w, h);
+        rect(this.x, this.y, this.w, this.h);
     }
 
 }

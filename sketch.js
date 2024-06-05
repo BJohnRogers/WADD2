@@ -1,6 +1,6 @@
 let posX = 250;
 let posY = 250;
-let jumpHeight = -100;
+let jumpHeight = -10;
 let ease = 0.1;
 let groundY = 400;
 let gravity = 0.3;
@@ -13,7 +13,7 @@ function setup(){
     var theCanvas = createCanvas(500, 500);
     theCanvas.parent('#game');
     player = new Player();
-    platformOne = new Platform(250, 300, 10, 10);
+    platformOne = new Platform(20, 340, 100, 10);
 }
 
 function draw(){
@@ -34,10 +34,12 @@ function draw(){
 
 function jump(){
     // Jump function
-    posY += jumpHeight;
+    if(keyIsDown(UP_ARROW) && grounded) posY += jumpHeight;
 }
 
 function move(){
+
+    jump();
 
     checkBounds();
 
@@ -72,15 +74,11 @@ function doGravity(){
       
     // Does the gravity if player is off ground
     if(!grounded){
-        posY += gravity * deltaTime; 
+        posY += 0.3;
     }
 
 }
 
-function keyPressed(){
-    // Checks if space is pressed and if the player is on ground
-    if(keyCode == 32 && grounded) jump();
-}
 
 
 
